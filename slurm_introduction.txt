@@ -1,0 +1,21 @@
+Introduction to slurm = resource manager: 
+
+ssh kp807@amarel.hpc.rutgers.edu
+sinfo
+srun --help
+srun --nodes=1 --ntasks-per-node=1 --cpus-per-task=1 --mem=100Mb --time=10:00 --pty bash    #interactive mode
+
+
+Two modes of running a slurm job: 
+1. interactive - please limit to 1 bash shell with few resources and remember to LOG OUT
+2. batch - for bigger jobs
+
+sbatch name_of_batch_file.sh    #batch mode
+
+Other commands: 
+scancel  123456                      #cancel job 123456
+sacct -u kp807 --start=2018-05-02    #show all jobs by 
+scontrol show job 123456 -dd         #details about job that's run
+
+https://youtu.be/RY7yeW3X2-U
+

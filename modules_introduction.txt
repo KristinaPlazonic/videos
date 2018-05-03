@@ -1,0 +1,32 @@
+lmod = https://lmod.readthedocs.io = A New Environment Module System
+Solves the problem of setting environment variables so you can run different software easily
+
+Main commands: 
+module avail                                  # which modules are available
+module spider                                 # find information about a software
+module load                                   # load a particular software
+module use  /projects/community/modulefiles   # user contributed software, unsupported
+module purge                                  # unload all modules
+module list                                   # list currently loaded modules
+
+gotcha: will not show modules until you load up their dependencies - e.g. R-Project
+
+module avail               # available system-installed modules
+which R                    # no results
+module spider R            # too many results
+module spider R-           # keyword search for specific module
+module load intel/17.0.4   # after load, we will see R-Project in the list of modules
+module avail               
+module load R-Project/3.4.1# loading R
+module list
+which R                    # now R is in my path
+
+srun -N 1 -n 1 -c 1 -t 10:00 R --no-save
+
+module use  /projects/community/modulefiles   # user contributed software, unsupported
+module avail                                  # which modules are available
+module load spark/2.3.0-kp807                 # load a particular software
+which spark-shell                             # shows where the software is located
+
+https://youtu.be/tu9cmUrutgE
+
