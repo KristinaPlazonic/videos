@@ -1,0 +1,19 @@
+How to start and interact with Jupyter notebook 
+
+1. system-installed
+2. user-installed with token
+3. user-installed with password
+
+# to use system installed version of notebook: 
+module load python/2.7.12
+
+# to install your version of jupyter
+pip install jupyter --user
+
+# to setup a password instead of token: 
+jupyter notebook --generate-config
+jupyter notebook password
+
+#remember to setup port-forwarding
+ssh -L 9999:slepner009:8889 kp807@amarel.hpc.rutgers.edu
+
