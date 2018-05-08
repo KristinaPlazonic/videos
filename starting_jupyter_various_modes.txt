@@ -17,3 +17,7 @@ jupyter notebook password
 #remember to setup port-forwarding
 ssh -L 9999:slepner009:8889 kp807@amarel.hpc.rutgers.edu
 
+#### NOTE: remember to the following command before starting jupyter if you encounter runtime_dir error:   
+export XDG_RUNTIME_DIR=$HOME/tmp
+
+
